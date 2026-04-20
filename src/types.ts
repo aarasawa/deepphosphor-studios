@@ -1,12 +1,12 @@
-export type Page = 'home' | 'projects' | 'pricing';
-
+export type Page = 'home' | 'projects' | 'pricing' | 'contact';
+ 
 export interface Service {
   id: string;
   title: string;
   description: string;
   icon: string;
 }
-
+ 
 export interface Project {
   id: string;
   title: string;
@@ -14,3 +14,4 @@ export interface Project {
   description: string;
   imageUrl: string;
 }
+ 

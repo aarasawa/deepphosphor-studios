@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
 import Pricing from './pages/Pricing';
+import Contact from './pages/Contact';
 import { Page } from './types';
 
 export default function App() {
@@ -48,6 +49,8 @@ export default function App() {
         return <Projects />;
       case 'pricing':
         return <Pricing />;
+      case 'contact':
+        return <Contact />;
       default:
         return <Home />;
     }

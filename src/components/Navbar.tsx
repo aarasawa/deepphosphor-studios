@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Menu, X, FolderKanban, Terminal, Info } from 'lucide-react';
+import { Menu, X, FolderKanban, Terminal, Info, Mail } from 'lucide-react';
 import { useState } from 'react';
 import { Page } from '../types';
 import Logo from './Logo';
@@ -16,6 +16,7 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
     { id: 'home', label: 'SERVICES', icon: Terminal },
     { id: 'projects', label: 'PROJECTS', icon: FolderKanban },
     { id: 'pricing', label: 'PRICING', icon: Info },
+    { id: 'contact', label: 'CONTACT', icon: Mail },
   ];
 
   return (
