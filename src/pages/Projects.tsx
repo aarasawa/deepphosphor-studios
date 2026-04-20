@@ -3,11 +3,11 @@ import { ExternalLink, Github } from 'lucide-react';
 
 const projects = [
   {
-    title: "LA Arts Collective",
+    title: "Los Angeles Koyasan Website Redesign",
     category: "Web Development",
     description: "A comprehensive digital platform for a local nonprofit supporting emerging artists. Features include a member directory and event management system.",
     image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=800",
-    tags: ["React", "Firebase", "Tailwind"]
+    tags: ["SquareSpace", "Aplos", "Workflow Optimization"]
   },
   {
     title: "EcoStream Systems",
@@ -15,20 +15,6 @@ const projects = [
     description: "Infrastructure overhaul for a sustainable energy startup. Implemented secure cloud storage and automated backup protocols.",
     image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc48?auto=format&fit=crop&q=80&w=800",
     tags: ["AWS", "Security", "DevOps"]
-  },
-  {
-    title: "Urban Echoes",
-    category: "Photography",
-    description: "A photographic series documenting the intersection of 80s architecture and modern street life in downtown Los Angeles.",
-    image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&q=80&w=800",
-    tags: ["Film", "Digital", "Exhibition"]
-  },
-  {
-    title: "Phosphor UI Kit",
-    category: "Open Source",
-    description: "A React component library inspired by vintage monochrome monitors, designed for high-end creative portfolios.",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800",
-    tags: ["React", "CSS", "Design"]
   }
 ];
 
@@ -38,8 +24,7 @@ export default function Projects() {
       <header className="mb-16">
         <h1 className="text-5xl md:text-8xl font-bold mb-6 font-mono text-amber-mid text-glow uppercase tracking-tighter">Selected Works.</h1>
         <p className="text-amber-mid/60 max-w-2xl text-lg">
-          A collection of projects where technology meets artistry. From complex web systems 
-          to visual storytelling.
+          Building for clients in 
         </p>
       </header>
 
@@ -95,8 +80,7 @@ export default function Projects() {
       <section className="mt-32 glass-panel p-12 text-center">
         <h2 className="text-3xl font-bold mb-6 text-amber-bright">Have a vision in mind?</h2>
         <p className="text-amber-mid/60 mb-8 max-w-xl mx-auto">
-          We are always looking for new challenges and meaningful collaborations. 
-          Let's build something that lasts.
+          We are always looking for new challenges and chances to look for opportunities to make meaningful collaborations. 
         </p>
         <button className="px-10 py-4 bg-amber-mid text-marine font-bold rounded-sm border-glow hover:bg-amber-bright transition-all">
           Get in Touch

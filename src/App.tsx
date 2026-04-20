@@ -15,12 +15,10 @@ import { Page } from './types';
 export default function App() {
   const [currentPage, setCurrentPage] = useState<Page>('home');
 
-  // Scroll to top on page change
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [currentPage]);
 
-  // Stabilize particles to prevent re-generation on every render
   const particles = useMemo(() => {
     return [...Array(80)].map((_, i) => {
       const size = Math.random() * 4 + 2;

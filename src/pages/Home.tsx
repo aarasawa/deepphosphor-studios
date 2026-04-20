@@ -5,9 +5,9 @@ import Logo from '../components/Logo';
 const services = [
   {
     title: "Web Development",
-    description: "Bespoke digital experiences built with modern frameworks. Specializing in accessible, performant websites for mission-driven organizations.",
+    description: "Digital experiences built with modern frameworks. Specializing in accessible, performant websites for mission-driven organizations. Solutions range from custom coded solutions to assistance with low-code tools",
     icon: Code2,
-    tags: ["React", "TypeScript", "Next.js", "Accessibility"]
+    tags: ["Digital Applications", "React", "TypeScript", "Accessibility"]
   },
   {
     title: "IT Consulting",

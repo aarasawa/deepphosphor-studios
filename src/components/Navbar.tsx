@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Menu, X, Briefcase, DollarSign, Terminal } from 'lucide-react';
+import { Menu, X, FolderKanban, Terminal, Info } from 'lucide-react';
 import { useState } from 'react';
 import { Page } from '../types';
 import Logo from './Logo';
@@ -13,9 +13,9 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { id: 'home', label: 'Services', icon: Terminal },
-    { id: 'projects', label: 'Portfolio', icon: Briefcase },
-    { id: 'pricing', label: 'Investment', icon: DollarSign },
+    { id: 'home', label: 'SERVICES', icon: Terminal },
+    { id: 'projects', label: 'PROJECTS', icon: FolderKanban },
+    { id: 'pricing', label: 'PRICING', icon: Info },
   ];
 
   return (
