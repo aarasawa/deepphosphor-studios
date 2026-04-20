@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { Check, Heart, Zap, Shield, Layout, ShoppingCart, Wrench, ArrowRightLeft, Info } from 'lucide-react';
+import { HomeProps } from '../types';
 
 const platformTiers = [
   {
@@ -167,8 +168,8 @@ export default function Pricing() {
       <header className="mb-20 text-center">
         <h1 className="text-5xl md:text-8xl font-bold mb-6 font-mono text-amber-mid text-glow uppercase tracking-tighter">Investment.</h1>
         <p className="text-amber-mid/60 max-w-2xl mx-auto text-lg">
-          Transparent pricing for nonprofits and small businesses. Senior-level work,
-          direct engagement — no agency overhead, no account managers.
+          Transparent pricing for nonprofits and small businesses. High-quality work and
+          direct engagement.
         </p>
       </header>
 
@@ -193,7 +194,7 @@ export default function Pricing() {
         <div className="flex items-center gap-6 mb-10">
           <div>
             <h2 className="text-2xl font-bold text-amber-bright">Custom & Consulting</h2>
-            <p className="text-amber-mid/50 text-sm mt-1">Bespoke builds · Strategy · Ongoing partnerships</p>
+            <p className="text-amber-mid/50 text-sm mt-1">Quality builds · Strategy · Ongoing partnerships</p>
           </div>
           <div className="h-px flex-grow bg-amber-mid/15" />
         </div>
@@ -295,9 +296,9 @@ export default function Pricing() {
 
             <div className="bg-marine/50 p-6 rounded-sm border border-amber-mid/20 text-center">
               <p className="text-amber-mid/60 text-sm mb-4">Not sure which tier fits your project?</p>
-              <button className="px-8 py-3 bg-amber-mid text-marine font-bold rounded-sm border-glow hover:bg-amber-bright transition-all text-sm">
+              <a href="/contact" className="px-8 py-3 bg-amber-mid text-marine font-bold rounded-sm border-glow hover:bg-amber-bright transition-all text-sm">
                 Book a Free 30-Min Call
-              </button>
+              </a>
               <p className="text-amber-mid/30 text-xs mt-3">No commitment. We'll scope it together.</p>
             </div>
           </div>

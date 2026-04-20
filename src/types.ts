@@ -15,3 +15,6 @@ export interface Project {
   imageUrl: string;
 }
  
+export interface HomeProps {
+  setPage: (page: Page) => void;
+}

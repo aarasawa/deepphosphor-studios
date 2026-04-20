@@ -115,9 +115,6 @@ export default function Logo({ variant = 'mark-a', className = '', size }: LogoP
           <text x="100" y="77"  textAnchor="middle" fill="#FFD580" fontFamily="'Share Tech Mono', monospace" fontSize="14" letterSpacing="5">DEEP</text>
           <text x="100" y="95"  textAnchor="middle" fill="#FFD580" fontFamily="'Share Tech Mono', monospace" fontSize="14" letterSpacing="5">PHOSPHOR</text>
           <text x="100" y="113" textAnchor="middle" fill="#FFB347" fontFamily="'Share Tech Mono', monospace" fontSize="14" letterSpacing="5">STUDIOS</text>
-          <line x1="28" y1="120" x2="172" y2="120" stroke="#FFB347" strokeWidth="0.5" opacity="0.18"/>
-          <text x="100" y="134" textAnchor="middle" fill="#C47A20" fontFamily="'Share Tech Mono', monospace" fontSize="7" letterSpacing="3">PELAGIC DIGITAL CRAFTSMANSHIP</text>
-          <text x="100" y="148" textAnchor="middle" fill="#7A4A0A" fontFamily="'Share Tech Mono', monospace" fontSize="7" letterSpacing="4">// EST. 1984</text>
         </svg>
       );
     case 'stacked-compact':
@@ -129,8 +126,6 @@ export default function Logo({ variant = 'mark-a', className = '', size }: LogoP
           <line x1="18" y1="50" x2="147" y2="50" stroke="#FFB347" strokeWidth="0.5" opacity="0.16"/>
           <text x="82" y="67"  textAnchor="middle" fill="#FFD580" fontFamily="'Share Tech Mono', monospace" fontSize="12" letterSpacing="4">DEEP PHOSPHOR</text>
           <text x="82" y="84"  textAnchor="middle" fill="#FFB347" fontFamily="'Share Tech Mono', monospace" fontSize="12" letterSpacing="5">STUDIOS</text>
-          <line x1="18" y1="91" x2="147" y2="91" stroke="#FFB347" strokeWidth="0.5" opacity="0.16"/>
-          <text x="82" y="105" textAnchor="middle" fill="#C47A20" fontFamily="'Share Tech Mono', monospace" fontSize="7" letterSpacing="3">EST. 1984</text>
         </svg>
       );
     default:

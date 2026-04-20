@@ -56,7 +56,7 @@ const Field = ({
         {label}
       </label>
       {hint && (
-        <span className="text-[10px] text-amber-mid/30 font-sans">{hint}</span>
+        <span className="text-[10px] text-amber-mid/60 font-sans">{hint}</span>
       )}
     </div>
     {children}
@@ -64,10 +64,10 @@ const Field = ({
 );
 
 const inputClass =
-  'w-full bg-marine/60 border border-amber-mid/15 text-amber-mid font-sans text-sm px-4 py-3 rounded-sm focus:outline-none focus:border-amber-mid/50 focus:ring-1 focus:ring-amber-mid/20 transition-all placeholder:text-amber-mid/20 hover:border-amber-mid/25';
+  'w-full bg-marine/60 border border-amber-mid/30 text-amber-mid font-sans text-sm px-4 py-3 rounded-sm focus:outline-none focus:border-amber-mid/50 focus:ring-1 focus:ring-amber-mid/40 transition-all placeholder:text-amber-mid/40 hover:border-amber-mid/25';
 
 const selectClass =
-  'w-full bg-marine/60 border border-amber-mid/15 text-amber-mid font-sans text-sm px-4 py-3 rounded-sm focus:outline-none focus:border-amber-mid/50 focus:ring-1 focus:ring-amber-mid/20 transition-all appearance-none cursor-pointer hover:border-amber-mid/25';
+  'w-full bg-marine/60 border border-amber-mid/30 text-amber-mid font-sans text-sm px-4 py-3 rounded-sm focus:outline-none focus:border-amber-mid/50 focus:ring-1 focus:ring-amber-mid/40 transition-all appearance-none cursor-pointer hover:border-amber-mid/25';
 
 export default function Contact() {
   const [form, setForm] = useState<FormData>({
@@ -89,34 +89,12 @@ export default function Contact() {
     if (!form.name || !form.email || !form.message) return;
     setStatus('submitting');
 
-    // ---------------------------------------------------------
-    // INTEGRATION POINT
-    // Replace the block below with your preferred handler:
-    //
-    // Option A — Formspree (simplest, free tier available):
-    //   const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-    //     method: 'POST',
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify(form),
-    //   });
-    //   if (res.ok) setStatus('success'); else setStatus('error');
-    //
-    // Option B — EmailJS:
-    //   import emailjs from '@emailjs/browser';
-    //   await emailjs.send('SERVICE_ID', 'TEMPLATE_ID', form, 'PUBLIC_KEY');
-    //   setStatus('success');
-    //
-    // Option C — Your own FastAPI endpoint (since you already have one):
-    //   const res = await fetch('https://your-api.railway.app/contact', {
-    //     method: 'POST',
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify(form),
-    //   });
-    //   if (res.ok) setStatus('success'); else setStatus('error');
-    // ---------------------------------------------------------
-
-    // Simulated delay for now — remove when wired up
-    await new Promise(r => setTimeout(r, 1200));
+    const res = await fetch('https://formspree.io/f/mgorlkyd', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(form),
+    });
+    if (res.ok) setStatus('success'); else setStatus('error');
     setStatus('success');
   };
 

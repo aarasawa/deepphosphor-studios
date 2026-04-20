@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { Code2, Cpu, Camera, Palette, ArrowRight } from 'lucide-react';
 import Logo from '../components/Logo';
+import { HomeProps, Page } from '../types';
 
 const services = [
   {
@@ -29,7 +30,7 @@ const services = [
   }
 ];
 
-export default function Home() {
+export default function Home({ setPage }: HomeProps) {
   return (
     <div className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       {/* Hero Section */}
@@ -51,10 +52,16 @@ export default function Home() {
             and visionary small businesses.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="px-8 py-4 bg-amber-mid text-marine font-bold rounded-sm hover:bg-amber-bright transition-all border-glow">
+            <button 
+              onClick={() => setPage('contact')}
+              className="px-8 py-4 bg-amber-mid text-marine font-bold rounded-sm hover:bg-amber-bright transition-all border-glow"
+            >
               Start a Project
             </button>
-            <button className="px-8 py-4 border border-amber-mid/30 text-amber-mid font-bold rounded-sm hover:bg-amber-mid/10 transition-all">
+            <button 
+              onClick={() => setPage('projects')}
+              className="px-8 py-4 border border-amber-mid/30 text-amber-mid font-bold rounded-sm hover:bg-amber-mid/10 transition-all"
+            >
               View Our Work
             </button>
           </div>

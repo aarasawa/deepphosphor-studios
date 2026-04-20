@@ -44,15 +44,15 @@ export default function App() {
   const renderPage = () => {
     switch (currentPage) {
       case 'home':
-        return <Home />;
+        return <Home setPage={setCurrentPage}/>;
       case 'projects':
-        return <Projects />;
+        return <Projects setPage={setCurrentPage}/>;
       case 'pricing':
-        return <Pricing />;
+        return <Pricing setPage={setCurrentPage}/>;
       case 'contact':
-        return <Contact />;
+        return <Contact setPage={setCurrentPage}/>;
       default:
-        return <Home />;
+        return <Home setPage={setCurrentPage}/>;
     }
   };
 
@@ -63,66 +63,6 @@ export default function App() {
       
       {/* Elliptical Vignette */}
       <div className="fixed inset-0 vignette pointer-events-none"></div>
-      
-      {/* Pelagic Light Rays */}
-      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-[-20%] left-[-20%] right-[-20%] bottom-0 ocean-rays opacity-40"></div>
-        <div className="absolute top-[-10%] left-[10%] right-[-10%] bottom-0 ocean-rays opacity-20" style={{ animationDelay: '-5s', filter: 'blur(60px)' }}></div>
-      </div>
-
-      {/* Floating Particles/Dust (Marine Snow) */}
-      <div className="fixed inset-0 z-10 pointer-events-none overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full">
-          {particles.map((p) => (
-            <motion.div
-              key={p.id}
-              initial={{ 
-                y: '-10vh', 
-                x: `${p.xStart}%`,
-                rotate: p.rotationStart,
-                opacity: 0
-              }}
-              animate={{ 
-                y: '110vh',
-                x: [`${p.xStart}%`, `${p.xEnd}%`, `${p.xStart}%`],
-                rotate: p.rotationEnd,
-                opacity: [0, p.opacity, p.opacity, 0]
-              }}
-              transition={{ 
-                duration: p.duration, 
-                repeat: Infinity, 
-                ease: "linear",
-                delay: p.delay,
-                x: {
-                  duration: p.duration / 2,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                },
-                rotate: {
-                  duration: p.duration / 3,
-                  repeat: Infinity,
-                  ease: "linear"
-                },
-                opacity: {
-                  times: [0, 0.1, 0.9, 1]
-                }
-              }}
-              style={{ 
-                width: p.size, 
-                height: p.size, 
-                filter: p.blur,
-                borderRadius: p.borderRadius,
-                aspectRatio: p.aspectRatio
-              }}
-              className="absolute bg-amber-phosphor/80 shadow-[0_0_5px_rgba(255,176,0,0.4)]"
-            />
-          ))}
-        </div>
-      </div>
-      
-      {/* Background Deep Glows */}
-      <div className="fixed top-[-10%] left-[-10%] w-[60%] h-[60%] bg-blue-900/10 blur-[150px] rounded-full pointer-events-none"></div>
-      <div className="fixed bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-amber-900/5 blur-[150px] rounded-full pointer-events-none"></div>
 
       <Navbar currentPage={currentPage} setPage={setCurrentPage} />
 
