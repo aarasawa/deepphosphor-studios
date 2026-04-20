@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=VT323&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Share Tech Mono", monospace;
+  --font-mono: "VT323", monospace;
+
+  --color-marine: #060d18;
+  --color-amber-mid: #FFB347;
+  --color-amber-bright: #FFD580;
+  --color-amber-dim: #C47A20;
+  --color-amber-glow: rgba(255, 179, 71, 0.4);
+  --color-soft-black: #0a1520;
+}
+
+@layer base {
+  body {
+    @apply text-amber-mid font-sans selection:bg-amber-mid selection:text-marine min-h-screen;
+    background: radial-gradient(circle at 50% -10%, #0a1520 0%, #060d18 70%, #04080f 100%);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-mono tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 8px var(--color-amber-glow), 0 0 12px var(--color-amber-glow);
+  }
+
+  .border-glow {
+    box-shadow: 0 0 10px var(--color-amber-glow);
+  }
+
+  .crt-overlay {
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+    background-size: 100% 3px, 3px 100%;
+    pointer-events: none;
+    z-index: 100;
+  }
+
+  .vignette {
+    background: radial-gradient(circle, transparent 50%, rgba(0,0,0,0.5) 150%);
+    pointer-events: none;
+    z-index: 90;
+  }
+
+  .glass-panel {
+    @apply bg-soft-black/40 backdrop-blur-xl border border-amber-mid/10;
+  }
+
+  .ocean-rays {
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      rgba(255, 179, 71, 0.03) 20%,
+      rgba(255, 179, 71, 0.01) 50%,
+      transparent 100%
+    );
+    mask-image: repeating-linear-gradient(
+      90deg,
+      black,
+      black 20px,
+      transparent 40px,
+      transparent 100px
+    );
+    filter: blur(40px);
+    animation: rays-drift 20s infinite linear;
+  }
+
+  @keyframes rays-drift {
+    0% { transform: translateX(-10%) skewX(-15deg); }
+    50% { transform: translateX(10%) skewX(-10deg); }
+    100% { transform: translateX(-10%) skewX(-15deg); }
+  }
+}
