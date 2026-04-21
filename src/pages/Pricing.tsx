@@ -108,7 +108,7 @@ const addons = [
   }
 ];
 
-const PricingCard = ({ tier, index, isSmall = false }: { tier: any; index: number; isSmall?: boolean }) => (
+const PricingCard = ({ tier, index, isSmall = false, setPage }: { tier: any; index: number; isSmall?: boolean, Page: HomeProps }) => (
   <motion.div
     key={tier.name}
     initial={{ opacity: 0, y: 20 }}
@@ -151,11 +151,14 @@ const PricingCard = ({ tier, index, isSmall = false }: { tier: any; index: numbe
       ))}
     </div>
 
-    <button className={`w-full py-3 font-bold rounded-sm transition-all text-sm ${
-      tier.highlight
-        ? 'bg-amber-mid text-marine hover:bg-amber-bright border-glow'
-        : 'border border-amber-mid/30 text-amber-mid hover:bg-amber-mid/10'
-    }`}>
+    <button 
+      onClick={() => setPage('contact')}
+      className={`w-full py-3 font-bold rounded-sm transition-all text-sm ${
+        tier.highlight
+          ? 'bg-amber-mid text-marine hover:bg-amber-bright border-glow'
+          : 'border border-amber-mid/30 text-amber-mid hover:bg-amber-mid/10'
+      }`}
+    >
       Get Started
     </button>
   </motion.div>
@@ -257,14 +260,6 @@ export default function Pricing({ setPage }: HomeProps) {
             </p>
             <div className="space-y-4">
               <div className="bg-amber-mid/5 p-4 rounded-sm border-l-2 border-amber-mid">
-                <h4 className="font-bold text-amber-mid mb-1">Sliding Scale Rates</h4>
-                <p className="text-sm text-amber-mid/60">20–40% discount on all services for registered 501(c)(3) organizations in the Los Angeles area.</p>
-              </div>
-              <div className="bg-amber-mid/5 p-4 rounded-sm border-l-2 border-amber-mid">
-                <h4 className="font-bold text-amber-mid mb-1">Pro-Bono Hours</h4>
-                <p className="text-sm text-amber-mid/60">Each quarter, 40 hours of development time are dedicated to a selected community project at no cost.</p>
-              </div>
-              <div className="bg-amber-mid/5 p-4 rounded-sm border-l-2 border-amber-mid">
                 <h4 className="font-bold text-amber-mid mb-1">Value-Based Pricing Available</h4>
                 <p className="text-sm text-amber-mid/60">Prefer a fixed project price over hourly? We offer value-based scoping for board-approved budgets and grant-funded projects.</p>
               </div>
@@ -297,7 +292,7 @@ export default function Pricing({ setPage }: HomeProps) {
             <div className="bg-marine/50 p-6 rounded-sm border border-amber-mid/20 text-center">
               <p className="text-amber-mid/60 text-sm mb-4">Not sure which tier fits your project?</p>
               <button 
-                onClick={() => setPage('home')} 
+                onClick={() => setPage('contact')} 
                 className="px-8 py-3 bg-amber-mid text-marine font-bold rounded-sm border-glow hover:bg-amber-bright transition-all text-sm"
               >
                 Book a Free 30-Min Call

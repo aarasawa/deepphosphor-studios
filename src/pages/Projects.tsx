@@ -83,7 +83,10 @@ export default function Projects({ setPage }: HomeProps) {
         <p className="text-amber-mid/60 mb-8 max-w-xl mx-auto">
           We are always looking for new challenges and chances to look for opportunities to make meaningful collaborations. 
         </p>
-        <button className="px-10 py-4 bg-amber-mid text-marine font-bold rounded-sm border-glow hover:bg-amber-bright transition-all">
+        <button 
+          onClick={() => setPage('contact')}
+          className="px-10 py-4 bg-amber-mid text-marine font-bold rounded-sm border-glow hover:bg-amber-bright transition-all"
+        >
           Get in Touch
         </button>
       </section>
