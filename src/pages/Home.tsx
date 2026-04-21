@@ -8,7 +8,7 @@ const services = [
     title: "Web Development",
     description: "Digital experiences built with modern frameworks. Specializing in accessible, performant websites for mission-driven organizations. Solutions range from custom coded solutions to assistance with low-code tools",
     icon: Code2,
-    tags: ["Digital Applications", "React", "TypeScript", "Accessibility"]
+    tags: ["Applications", "React", "TypeScript", "Accessibility"]
   },
   {
     title: "IT Consulting",

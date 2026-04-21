@@ -10,7 +10,6 @@ export default function Footer() {
             <h4 className="text-amber-mid font-sans text-xl uppercase tracking-widest mb-6">Contact</h4>
             <ul className="space-y-4 text-sm text-amber-mid/60">
               <li className="flex items-center space-x-3">
-                <Mail size={16} className="text-amber-mid" />
                 <span>alex@deepphosphor.studio</span>
               </li>
               <li>Los Angeles, CA</li>
