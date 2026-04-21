@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Send, Terminal, CheckCircle, AlertCircle } from 'lucide-react';
+import { HomeProps } from '../types';
 
 type FormStatus = 'idle' | 'submitting' | 'success' | 'error';
 
@@ -69,7 +70,7 @@ const inputClass =
 const selectClass =
   'w-full bg-marine/60 border border-amber-mid/30 text-amber-mid font-sans text-sm px-4 py-3 rounded-sm focus:outline-none focus:border-amber-mid/50 focus:ring-1 focus:ring-amber-mid/40 transition-all appearance-none cursor-pointer hover:border-amber-mid/25';
 
-export default function Contact() {
+export default function Contact({ setPage }: HomeProps) {
   const [form, setForm] = useState<FormData>({
     name: '',
     org: '',

@@ -1,12 +1,12 @@
 import { motion } from 'motion/react';
 import { Code2, Cpu, Camera, Palette, ArrowRight } from 'lucide-react';
 import Logo from '../components/Logo';
-import { HomeProps, Page } from '../types';
+import { HomeProps } from '../types';
 
 const services = [
   {
     title: "Web Development",
-    description: "Digital experiences built with modern frameworks. Specializing in accessible, performant websites for mission-driven organizations. Solutions range from custom coded solutions to assistance with low-code tools",
+    description: "Digital experiences built with modern frameworks. Specializing in accessible, performant websites for mission-driven organizations.",
     icon: Code2,
     tags: ["Applications", "React", "TypeScript", "Accessibility"]
   },

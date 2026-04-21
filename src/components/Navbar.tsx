@@ -13,7 +13,7 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { id: 'home', label: 'SERVICES', icon: Terminal },
+    { id: 'home', label: 'HOME', icon: Terminal },
     { id: 'projects', label: 'PROJECTS', icon: FolderKanban },
     { id: 'pricing', label: 'PRICING', icon: Info },
     { id: 'contact', label: 'CONTACT', icon: Mail },

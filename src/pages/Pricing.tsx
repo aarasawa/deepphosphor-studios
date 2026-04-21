@@ -161,7 +161,7 @@ const PricingCard = ({ tier, index, isSmall = false }: { tier: any; index: numbe
   </motion.div>
 );
 
-export default function Pricing() {
+export default function Pricing({ setPage }: HomeProps) {
   return (
     <div className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
 
@@ -296,9 +296,12 @@ export default function Pricing() {
 
             <div className="bg-marine/50 p-6 rounded-sm border border-amber-mid/20 text-center">
               <p className="text-amber-mid/60 text-sm mb-4">Not sure which tier fits your project?</p>
-              <a href="/contact" className="px-8 py-3 bg-amber-mid text-marine font-bold rounded-sm border-glow hover:bg-amber-bright transition-all text-sm">
+              <button 
+                onClick={() => setPage('home')} 
+                className="px-8 py-3 bg-amber-mid text-marine font-bold rounded-sm border-glow hover:bg-amber-bright transition-all text-sm"
+              >
                 Book a Free 30-Min Call
-              </a>
+              </button>
               <p className="text-amber-mid/30 text-xs mt-3">No commitment. We'll scope it together.</p>
             </div>
           </div>

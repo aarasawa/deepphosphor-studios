@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { ExternalLink, Github } from 'lucide-react';
+import { HomeProps } from '../types';
 
 const projects = [
   {
@@ -18,7 +19,7 @@ const projects = [
   }
 ];
 
-export default function Projects() {
+export default function Projects({ setPage }: HomeProps) {
   return (
     <div className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <header className="mb-16">
