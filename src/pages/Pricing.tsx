@@ -1,114 +1,9 @@
 import { motion } from 'motion/react';
-import { Check, Heart, Zap, Shield, Layout, ShoppingCart, Wrench, ArrowRightLeft, Info } from 'lucide-react';
-import { HomeProps } from '../types';
+import { Check, Heart } from 'lucide-react';
+import { HomeProps, Page } from '../types';
+import { platformTiers, customTiers, addons } from '../components/PricingDescriptions';
 
-const platformTiers = [
-  {
-    name: "Starter Presence",
-    price: "$800",
-    priceTo: "$1,200",
-    period: "one-time",
-    description: "A clean, professional web presence on Squarespace or WordPress. Ideal for nonprofits and small businesses that need to get online fast.",
-    features: [
-      "Squarespace or WordPress",
-      "Up to 5 pages",
-      "Mobile-responsive layout",
-      "Contact form & basic SEO",
-      "1 round of revisions",
-      "2-week delivery"
-    ],
-    icon: Layout,
-    highlight: false,
-    tag: null
-  },
-  {
-    name: "Platform Plus",
-    price: "$1,800",
-    priceTo: "$2,500",
-    period: "one-time",
-    description: "E-commerce and donation-ready builds on Shopify, Square, or WooCommerce. Everything a growing org needs to transact online.",
-    features: [
-      "Shopify, Square, or WooCommerce",
-      "Up to 15 products or donation tiers",
-      "Payment & donation integration",
-      "Custom theme adjustments",
-      "Inventory & order setup",
-      "Staff training session included"
-    ],
-    icon: ShoppingCart,
-    highlight: true,
-    tag: "Most Requested"
-  }
-];
-
-const customTiers = [
-  {
-    name: "Consultation",
-    price: "$275",
-    period: "per session",
-    description: "A focused 90-minute strategy session with a written infrastructure audit and actionable roadmap delivered afterward.",
-    features: [
-      "90-minute deep dive",
-      "Infrastructure & security audit",
-      "Written roadmap report",
-      "Priority recommendations"
-    ],
-    icon: Info,
-    highlight: false
-  },
-  {
-    name: "Custom Build",
-    price: "$2,500",
-    period: "starting at",
-    description: "Fully custom React/Next.js development. No templates — built from the ground up for your brand, your users, and your scale.",
-    features: [
-      "React / Next.js, custom-designed",
-      "Headless CMS integration",
-      "SEO & performance optimization",
-      "Accessibility compliance (WCAG)",
-      "Excludes: copywriting, custom illustration"
-    ],
-    icon: Zap,
-    highlight: true
-  },
-  {
-    name: "Retainer",
-    price: "$800",
-    period: "per month",
-    description: "A technical partner who already knows your systems. No scrambling when something breaks — just one message.",
-    features: [
-      "Priority response & support",
-      "Plugin & security updates",
-      "Monthly performance audits",
-      "10 hours of development time"
-    ],
-    icon: Shield,
-    highlight: false
-  }
-];
-
-const addons = [
-  {
-    icon: Wrench,
-    name: "Maintenance",
-    price: "$150 – $200 / mo",
-    description: "Plugin updates, backups, uptime monitoring, and 'something broke' support. Designed for platform-site clients who don't need full retainer hours."
-  },
-  {
-    icon: ArrowRightLeft,
-    name: "Site Migration",
-    price: "From $500",
-    description: "Move your existing site to a modern platform — content, SEO, redirects, and all. Common for nonprofits stuck on aging infrastructure."
-  },
-  {
-    icon: ShoppingCart,
-    name: "Payment & Donation Setup",
-    price: "From $350",
-    description: "Stripe, Square, or PayPal integration for e-commerce or donation flows. Includes testing and a handoff walkthrough."
-  }
-];
-
-const PricingCard = ({ tier, index, isSmall = false, setPage }: { tier: any; index: number; isSmall?: boolean, Page: HomeProps }) => (
+const PricingCard = ({ tier, index, isSmall = false, setPage }: { tier: any; index: number; isSmall?: boolean, setPage: (page: Page) => void; }) => (
   <motion.div
     key={tier.name}
     initial={{ opacity: 0, y: 20 }}
@@ -187,7 +82,7 @@ export default function Pricing({ setPage }: HomeProps) {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {platformTiers.map((tier, i) => (
-            <PricingCard key={tier.name} tier={tier} index={i} />
+            <PricingCard key={tier.name} tier={tier} index={i} setPage={setPage} />
           ))}
         </div>
       </section>
@@ -196,14 +91,14 @@ export default function Pricing({ setPage }: HomeProps) {
       <section className="mb-20">
         <div className="flex items-center gap-6 mb-10">
           <div>
-            <h2 className="text-2xl font-bold text-amber-bright">Custom & Consulting</h2>
+            <h2 className="text-2xl font-bold text-amber-bright">Custom & IT Consulting</h2>
             <p className="text-amber-mid/50 text-sm mt-1">Quality builds · Strategy · Ongoing partnerships</p>
           </div>
           <div className="h-px flex-grow bg-amber-mid/15" />
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {customTiers.map((tier, i) => (
-            <PricingCard key={tier.name} tier={tier} index={i} isSmall />
+            <PricingCard key={tier.name} tier={tier} index={i} isSmall setPage={setPage} />
           ))}
         </div>
       </section>
