@@ -1,10 +1,4 @@
-import React from 'react';
-
-interface LogoProps {
-  variant?: 'mark-a' | 'mark-b' | 'mark-c' | 'horizontal' | 'horizontal-compact' | 'stacked' | 'stacked-compact';
-  className?: string;
-  size?: number;
-}
+import { LogoProps } from '../types';
 
 const FishMark = ({ opacity = 1, showGlow = true, showStalk = true }) => (
   <g>
@@ -107,25 +101,10 @@ export default function Logo({ variant = 'mark-a', className = '', size }: LogoP
       );
     case 'stacked':
       return (
-        <svg width={size || 200} height={size ? size * 0.825 : 165} viewBox="0 0 200 165" overflow="visible" className={className}>
-          <g transform="translate(82,14) scale(1.5)">
+        <svg width={size || 200} height={size ? size * 0.75 : 150} viewBox="0 0 200 150" overflow="visible" className={className}>
+          <g transform="translate(55, 30) scale(3.0)">
             <FishMark />
           </g>
-          <line x1="28" y1="58" x2="172" y2="58" stroke="#FFB347" strokeWidth="0.5" opacity="0.18"/>
-          <text x="100" y="77"  textAnchor="middle" fill="#FFD580" fontFamily="'Share Tech Mono', monospace" fontSize="14" letterSpacing="5">DEEP</text>
-          <text x="100" y="95"  textAnchor="middle" fill="#FFD580" fontFamily="'Share Tech Mono', monospace" fontSize="14" letterSpacing="5">PHOSPHOR</text>
-          <text x="100" y="113" textAnchor="middle" fill="#FFB347" fontFamily="'Share Tech Mono', monospace" fontSize="14" letterSpacing="5">STUDIOS</text>
-        </svg>
-      );
-    case 'stacked-compact':
-      return (
-        <svg width={size || 165} height={size ? size * 0.715 : 118} viewBox="0 0 165 118" overflow="visible" className={className}>
-          <g transform="translate(54,8) scale(1.3)">
-            <FishMark />
-          </g>
-          <line x1="18" y1="50" x2="147" y2="50" stroke="#FFB347" strokeWidth="0.5" opacity="0.16"/>
-          <text x="82" y="67"  textAnchor="middle" fill="#FFD580" fontFamily="'Share Tech Mono', monospace" fontSize="12" letterSpacing="4">DEEP PHOSPHOR</text>
-          <text x="82" y="84"  textAnchor="middle" fill="#FFB347" fontFamily="'Share Tech Mono', monospace" fontSize="12" letterSpacing="5">STUDIOS</text>
         </svg>
       );
     default:

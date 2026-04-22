@@ -87,7 +87,7 @@ export default function Pricing({ setPage }: HomeProps) {
         </div>
       </section>
 
-      {/* Custom & Consulting */}
+      {/* Custom & IT Consulting */}
       <section className="mb-20">
         <div className="flex items-center gap-6 mb-10">
           <div>
@@ -96,7 +96,7 @@ export default function Pricing({ setPage }: HomeProps) {
           </div>
           <div className="h-px flex-grow bg-amber-mid/15" />
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {customTiers.map((tier, i) => (
             <PricingCard key={tier.name} tier={tier} index={i} isSmall setPage={setPage} />
           ))}

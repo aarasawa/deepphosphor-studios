@@ -59,7 +59,7 @@ export const customTiers = [
     name: "IT Assistance Retainer",
     price: "$500",
     period: "per month",
-    description: "A technical partner who can assist ",
+    description: "A technical partner who can assist with your computer and IT needs.",
     features: [
       "Troubleshooting & support",
       "Plugin & security updates",
@@ -88,7 +88,7 @@ export const customTiers = [
     name: "Website Maintenance Retainer",
     price: "$800",
     period: "per month",
-    description: "A technical partner who already knows your systems. No scrambling when something breaks — just one message.",
+    description: "A technical partner who already knows your systems. No scrambling when something breaks, just one message away.",
     features: [
       "Priority response & support",
       "Plugin & security updates",

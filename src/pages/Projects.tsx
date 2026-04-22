@@ -1,31 +1,15 @@
 import { motion } from 'motion/react';
 import { ExternalLink, Github } from 'lucide-react';
 import { HomeProps } from '../types';
-
-const projects = [
-  {
-    title: "Los Angeles Koyasan Website Redesign",
-    category: "Web Development",
-    description: "A comprehensive digital platform for a local nonprofit supporting emerging artists. Features include a member directory and event management system.",
-    image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=800",
-    tags: ["SquareSpace", "Aplos", "Workflow Optimization"]
-  },
-  {
-    title: "EcoStream Systems",
-    category: "IT Consulting",
-    description: "Infrastructure overhaul for a sustainable energy startup. Implemented secure cloud storage and automated backup protocols.",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc48?auto=format&fit=crop&q=80&w=800",
-    tags: ["AWS", "Security", "DevOps"]
-  }
-];
+import { projects } from '../components/ProjectDescriptions';
 
 export default function Projects({ setPage }: HomeProps) {
   return (
     <div className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <header className="mb-16">
-        <h1 className="text-5xl md:text-8xl font-bold mb-6 font-mono text-amber-mid text-glow uppercase tracking-tighter">Selected Works.</h1>
+        <h1 className="text-5xl md:text-8xl font-bold mb-6 font-mono text-amber-mid text-glow uppercase tracking-tighter">PROJECTS.</h1>
         <p className="text-amber-mid/60 max-w-2xl text-lg">
-          Building for clients in 
+          Offering affordable technical services to businesses and organizations who need it most.
         </p>
       </header>
 
