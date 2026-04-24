@@ -44,7 +44,7 @@ export default function ServiceWindow({ service, onClose, onContact }: ServiceWi
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.96, y: 8 }}
             transition={{ type: 'spring', damping: 30, stiffness: 320, duration: 0.2 }}
-            className="fixed z-50 inset-4 sm:inset-auto sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 sm:w-[860px] lg:w-[1000px] sm:max-h-[80vh] flex flex-col font-mono"
+            className="fixed z-50 inset-4 sm:inset-auto sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 sm:w-[800px] sm:max-h-[80vh] flex flex-col font-mono"
             style={{
               // Outer double border — DOS window chrome
               border: '2px solid #FFB347',
@@ -73,7 +73,7 @@ export default function ServiceWindow({ service, onClose, onContact }: ServiceWi
               {/* Close button — DOS style [ X ] */}
               <button
                 onClick={onClose}
-                className="w-8 h-full flex items-center justify-center text-md font-bold transition-colors shrink-0"
+                className="w-8 h-full flex items-center justify-center text-xs font-bold transition-colors shrink-0"
                 style={{
                   color: '#060d18',
                   borderLeft: '2px solid #b87d2a',
@@ -127,7 +127,7 @@ export default function ServiceWindow({ service, onClose, onContact }: ServiceWi
               {/* What's Included */}
               <div>
                 <div
-                  className="text-lg uppercase tracking-widest px-3 py-1 mb-3 inline-block"
+                  className="text-md uppercase tracking-widest px-3 py-1 mb-3 inline-block"
                   style={{ background: '#FFB347', color: '#060d18' }}
                 >
                   ▸ INCLUDED
@@ -135,7 +135,7 @@ export default function ServiceWindow({ service, onClose, onContact }: ServiceWi
                 <div className="space-y-2 pl-2">
                   {service.includes.map((item, i) => (
                     <div key={i} className="flex items-start space-x-3 text-lg" style={{ color: 'rgba(255,179,71,0.7)' }}>
-                      <span style={{ color: 'rgba(255,179,71,0.35)' }} >
+                      <span style={{ color: 'rgba(255,179,71,0.35)' }}>
                         {String(i + 1).padStart(2, '0')}.
                       </span>
                       <span>{item}</span>
@@ -147,7 +147,7 @@ export default function ServiceWindow({ service, onClose, onContact }: ServiceWi
               {/* Good Fit */}
               <div>
                 <div
-                  className="text-lg uppercase tracking-widest px-3 py-1 mb-3 inline-block"
+                  className="text-md uppercase tracking-widest px-3 py-1 mb-3 inline-block"
                   style={{ background: '#FFB347', color: '#060d18' }}
                 >
                   ▸ GOOD FIT IF YOU...
@@ -165,7 +165,7 @@ export default function ServiceWindow({ service, onClose, onContact }: ServiceWi
               {/* Tags */}
               <div>
                 <div
-                  className="text-lg uppercase tracking-widest px-3 py-1 mb-3 inline-block"
+                  className="text-md uppercase tracking-widest px-3 py-1 mb-3 inline-block"
                   style={{ background: '#FFB347', color: '#060d18' }}
                 >
                   ▸ TECHNOLOGIES
@@ -174,7 +174,7 @@ export default function ServiceWindow({ service, onClose, onContact }: ServiceWi
                   {service.tags.map(tag => (
                     <span
                       key={tag}
-                      className="text-[16px] uppercase tracking-widest px-2 py-1"
+                      className="text-[12px] uppercase tracking-widest px-2 py-1"
                       style={{
                         border: '1px solid rgba(255,179,71,0.25)',
                         color: 'rgba(255,179,71,0.5)',
@@ -195,12 +195,12 @@ export default function ServiceWindow({ service, onClose, onContact }: ServiceWi
                 background: 'rgba(255,179,71,0.04)',
               }}
             >
-              <span className="text-lg" style={{ color: 'rgba(255,179,71,0.3)' }}>
+              <span className="text-md" style={{ color: 'rgba(255,179,71,0.3)' }}>
                 [ESC] CLOSE &nbsp;·&nbsp; [ENTER] CONTACT
               </span>
               <button
                 onClick={() => { onClose(); onContact(); }}
-                className="text-lg uppercase tracking-widest px-4 py-1 font-bold transition-all"
+                className="text-md uppercase tracking-widest px-4 py-1 font-bold transition-all"
                 style={{
                   border: '1px solid #FFB347',
                   color: '#060d18',
