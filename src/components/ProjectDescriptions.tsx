@@ -4,7 +4,7 @@ export const projects = [
     category: "Web Development/IT Management",
     status: "ONGOING",
     description: "Comprehensive IT management and web development for a local temple. Responsibilities include website maintenance, network administration, and user support. Currently on retainer for ongoing support and development.",
-    image: "",
+    image: "assets\\koyasan.jpg",
     tags: ["SquareSpace", "Aplos", "Power Apps", "IT Management", "Workflow Optimization"]
   },
   {
@@ -12,7 +12,7 @@ export const projects = [
     category: "Website Maintenance",
     status: "COMPLETED",
     description: "Website maintenance and updates for a local photography studio.",
-    image: "",
+    image: "assets\\film-processing.jpg",
     tags: ["IONOS", "Website Redesign", "Security", "DevOps"]
   }, 
   {
@@ -20,7 +20,7 @@ export const projects = [
     category: "Internal Business Applications Development/Data Analytics",
     status: "ONGOING",
     description: "Development and implementation of internal business applications and data analytics solutions for a behavioral health organization.",
-    image: "",
+    image: "assets\\bhs-logo.png",
     tags: ["Electronic Medical Record", "Power Apps", "Power Automate", "Power BI"]
   }
 ];
