@@ -3,7 +3,7 @@ export const projects = [
     title: "Los Angeles Koyasan",
     category: "Web Development/IT Management",
     status: "ONGOING",
-    description: "A comprehensive digital platform for a local nonprofit supporting emerging artists. Features include a member directory and event management system.",
+    description: "Comprehensive IT management and web development for a local temple. Responsibilities include website maintenance, network administration, and user support. Currently on retainer for ongoing support and development.",
     image: "",
     tags: ["SquareSpace", "Aplos", "Power Apps", "IT Management", "Workflow Optimization"]
   },
@@ -11,15 +11,15 @@ export const projects = [
     title: "Photoworks by Rick",
     category: "Website Maintenance",
     status: "COMPLETED",
-    description: "Infrastructure overhaul for a sustainable energy startup. Implemented secure cloud storage and automated backup protocols.",
+    description: "Website maintenance and updates for a local photography studio.",
     image: "",
     tags: ["IONOS", "Website Redesign", "Security", "DevOps"]
   }, 
   {
     title: "Behavioral Health Services, Inc.",
-    category: "Applications Development",
+    category: "Internal Business Applications Development/Data Analytics",
     status: "ONGOING",
-    description: "",
+    description: "Development and implementation of internal business applications and data analytics solutions for a behavioral health organization.",
     image: "",
     tags: ["Electronic Medical Record", "Power Apps", "Power Automate", "Power BI"]
   }
