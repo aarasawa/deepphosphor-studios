@@ -27,8 +27,7 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
             className="flex items-center cursor-pointer group"
             onClick={() => setPage('home')}
           >
-            <Logo variant="horizontal-compact" size={280} className="hidden sm:block" />
-            <Logo variant="mark-c" size={40} className="sm:hidden" />
+            <Logo variant="horizontal" />
           </div>
 
           {/* Desktop Nav */}
@@ -37,7 +36,7 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
               <button
                 key={item.id}
                 onClick={() => setPage(item.id as Page)}
-                className={`flex items-center space-x-2 text-lg font-mono uppercase transition-colors hover:text-amber-phosphor ${
+                className={`flex items-center space-x-2 text-2xl font-mono uppercase transition-colors hover:text-amber-phosphor ${
                   currentPage === item.id ? 'text-amber-phosphor text-glow' : 'text-white/70'
                 }`}
               >

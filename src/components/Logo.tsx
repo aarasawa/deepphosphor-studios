@@ -27,14 +27,12 @@ const FishMark = ({ opacity = 1, showGlow = true, showStalk = true }) => (
     <rect x="12" y="15" width="11" height="2" fill="#060d18"/>
     <rect x="13" y="15" width="2"  height="2" fill="#FFD580"/>
     <rect x="18" y="15" width="2"  height="2" fill="#FFD580"/>
-    {showStalk && <rect x="16" y="-2" width="2"  height="3" fill="#FFB347" opacity={0.75 * opacity}/>}
-    {showGlow && (
-      <g>
-        <circle cx="15" cy="-5" r="5"   fill="#FFD580" opacity={0.14 * opacity}/>
-        <circle cx="15" cy="-5" r="3"   fill="#FFD580" opacity={0.46 * opacity}/>
-        <circle cx="15" cy="-5" r="1.5" fill="#FFD580" opacity={opacity}/>
-      </g>
-    )}
+    <rect x="16" y="-2" width="2"  height="3" fill="#FFB347" opacity={0.75 * opacity}/>
+    <g>
+      <circle cx="15" cy="-5" r="5"   fill="#FFD580" opacity={0.14 * opacity}/>
+      <circle cx="15" cy="-5" r="3"   fill="#FFD580" opacity={0.46 * opacity}/>
+      <circle cx="15" cy="-5" r="1.5" fill="#FFD580" opacity={opacity}/>
+    </g>
   </g>
 );
 
@@ -84,7 +82,7 @@ export default function Logo({ variant = 'mark-a', className = '', size }: LogoP
             <FishMark />
           </g>
           <line x1="56" y1="6" x2="56" y2="42" stroke="#FFB347" strokeWidth="0.7" opacity="0.22"/>
-          <text x="70" y="22" fill="#FFD580" fontFamily="'Share Tech Mono', monospace" fontSize="15" letterSpacing="4">DEEP PHOSPHOR</text>
+          <text x="70" y="22" fill="#FFD580" fontFamily="'Share Tech Mono', monospace" fontSize="20" letterSpacing="4">DEEP PHOSPHOR</text>
           <text x="70" y="40" fill="#C47A20" fontFamily="'Share Tech Mono', monospace" fontSize="15" letterSpacing="6">STUDIOS</text>
         </svg>
       );
