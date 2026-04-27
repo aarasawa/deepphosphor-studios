@@ -85,7 +85,7 @@ export default function Home({ setPage }: HomeProps) {
                   {service.tags.slice(0, 4).map(tag => (
                     <span
                       key={tag}
-                      className="text-[14px] uppercase tracking-widest font-sans px-2 py-1 bg-amber-mid/5 border border-amber-mid/10 rounded-sm"
+                      className="text-[10px] uppercase tracking-widest font-sans px-2 py-1 bg-amber-mid/5 border border-amber-mid/10 rounded-sm"
                     >
                       {tag}
                     </span>
