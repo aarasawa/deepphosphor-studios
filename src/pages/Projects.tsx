@@ -31,11 +31,6 @@ export default function Projects({ setPage }: HomeProps) {
                 referrerPolicy="no-referrer"
               />
               <div className="absolute inset-0 bg-marine/40 group-hover:bg-transparent transition-all"></div>
-              <div className="absolute top-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                <button className="p-2 bg-amber-mid text-marine rounded-full shadow-lg">
-                  <ExternalLink size={18} />
-                </button>
-              </div>
             </div>
             
             <div className="flex items-start justify-between">

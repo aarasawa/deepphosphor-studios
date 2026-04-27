@@ -16,8 +16,8 @@
 @layer base {
   body {
     @apply text-amber-mid font-sans selection:bg-amber-mid selection:text-marine min-h-screen;
+    /* background-attachment: fixed removed — breaks fixed positioning on mobile */
     background: radial-gradient(circle at 50% -10%, #0a1520 0%, #060d18 70%, #04080f 100%);
-    background-attachment: fixed;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -38,41 +38,18 @@
     background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
     background-size: 100% 3px, 3px 100%;
     pointer-events: none;
-    z-index: 100;
+    /* z-index lowered below navbar */
+    z-index: 10;
   }
 
   .vignette {
     background: radial-gradient(circle, transparent 50%, rgba(0,0,0,0.5) 150%);
     pointer-events: none;
-    z-index: 90;
+    /* z-index lowered below navbar */
+    z-index: 9;
   }
 
   .glass-panel {
     @apply bg-soft-black/40 backdrop-blur-xl border border-amber-mid/10;
-  }
-
-  .ocean-rays {
-    background: linear-gradient(
-      to bottom,
-      transparent,
-      rgba(255, 179, 71, 0.03) 20%,
-      rgba(255, 179, 71, 0.01) 50%,
-      transparent 100%
-    );
-    mask-image: repeating-linear-gradient(
-      90deg,
-      black,
-      black 20px,
-      transparent 40px,
-      transparent 100px
-    );
-    filter: blur(40px);
-    animation: rays-drift 20s infinite linear;
-  }
-
-  @keyframes rays-drift {
-    0% { transform: translateX(-10%) skewX(-15deg); }
-    50% { transform: translateX(10%) skewX(-10deg); }
-    100% { transform: translateX(-10%) skewX(-15deg); }
   }
 }

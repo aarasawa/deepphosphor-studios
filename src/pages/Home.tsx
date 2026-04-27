@@ -20,15 +20,14 @@ export default function Home({ setPage }: HomeProps) {
           transition={{ duration: 1.2, ease: "easeOut" }}
           className="flex flex-col items-center text-center relative z-10"
         >
-          <Logo variant="stacked" size={280} className="mb-6 drop-shadow-[0_0_20px_rgba(255,179,71,0.2)]" />
+          <Logo variant="stacked" size={280} className="sm:hidden md: hidden mb-6 drop-shadow-[0_0_20px_rgba(255,179,71,0.2)]" />
 
           <h1 className="text-7xl md:text-9xl font-bold mb-12 leading-none">
             <span className="text-amber-mid text-glow font-mono uppercase tracking-tighter drop-shadow-[0_0_30px_rgba(255,179,71,0.3)]">
-              Craftsmanship.
+              Deep Phosphor Studios
             </span>
           </h1>
-          <p className="text-2xl text-amber-mid/50 max-w-3xl mx-auto mb-14 leading-relaxed">
-            Deep Phosphor Studios explores the depths of digital innovation.
+          <p className="text-xl text-amber-mid/50 max-w-3xl mx-auto mb-14 leading-relaxed">
             We bring light to the dark waters of technology for nonprofits
             and visionary small businesses.
           </p>

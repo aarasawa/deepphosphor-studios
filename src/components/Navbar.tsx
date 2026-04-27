@@ -20,70 +20,134 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-amber-phosphor/5">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-24">
-          <div 
-            className="flex items-center cursor-pointer group"
-            onClick={() => setPage('home')}
-          >
-            <Logo variant="horizontal" />
+    <div
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 9999,
+        background: 'rgba(4, 10, 20, 0.92)',
+        backdropFilter: 'blur(12px)',
+        WebkitBackdropFilter: 'blur(12px)',
+        borderBottom: '1px solid rgba(255,179,71,0.08)',
+      }}
+    >
+      {/* Main bar */}
+      <div
+        style={{
+          maxWidth: '1280px',
+          margin: '0 auto',
+          padding: '0 1rem',
+          height: '72px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}
+      >
+        {/* Logo — constrained so it doesn't push hamburger off screen */}
+        <div
+          onClick={() => setPage('home')}
+          style={{ cursor: 'pointer', flexShrink: 0, maxWidth: '220px' }}
+        >
+          {/* Mobile: just the fish */}
+          <div className="lg:hidden">
+            <Logo variant="mark-a" size={48} />
           </div>
-
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => setPage(item.id as Page)}
-                className={`flex items-center space-x-2 text-2xl font-mono uppercase transition-colors hover:text-amber-phosphor ${
-                  currentPage === item.id ? 'text-amber-phosphor text-glow' : 'text-white/70'
-                }`}
-              >
-                <item.icon className="w-4 h-4" />
-                <span>{item.label}</span>
-              </button>
-            ))}
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-amber-phosphor p-2"
-            >
-              {isOpen ? <X /> : <Menu />}
-            </button>
+          {/* Desktop: full lockup */}
+          <div className="hidden lg:block">
+            <Logo variant="horizontal-compact" size={280} />
           </div>
         </div>
+
+        {/* Desktop nav — only on lg+ */}
+        <div className="hidden lg:flex items-center" style={{ gap: '2rem' }}>
+          {navItems.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => setPage(item.id as Page)}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.4rem',
+                fontFamily: 'monospace',
+                fontSize: '1.1rem',
+                textTransform: 'uppercase',
+                letterSpacing: '0.1em',
+                color: currentPage === item.id ? '#FFB347' : 'rgba(255,255,255,0.6)',
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
+                transition: 'color 0.2s',
+              }}
+            >
+              <item.icon size={14} />
+              <span>{item.label}</span>
+            </button>
+          ))}
+        </div>
+
+        {/* Hamburger — always visible below lg */}
+        <button
+          className="lg:hidden"
+          onClick={() => setIsOpen(!isOpen)}
+          style={{
+            color: '#FFB347',
+            background: 'none',
+            border: 'none',
+            cursor: 'pointer',
+            padding: '8px',
+            flexShrink: 0,
+          }}
+        >
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </div>
 
-      {/* Mobile Nav */}
+      {/* Mobile dropdown */}
       {isOpen && (
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
-          className="md:hidden glass-panel border-t border-amber-phosphor/20 py-4"
+          exit={{ opacity: 0, y: -8 }}
+          style={{
+            background: 'rgba(4, 10, 20, 0.98)',
+            borderTop: '1px solid rgba(255,179,71,0.1)',
+            padding: '0.75rem 1rem 1rem',
+          }}
         >
-          <div className="px-4 space-y-4">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => {
-                  setPage(item.id as Page);
-                  setIsOpen(false);
-                }}
-                className={`flex items-center space-x-4 w-full p-3 rounded-lg font-mono uppercase text-xl ${
-                  currentPage === item.id ? 'bg-amber-phosphor/10 text-amber-phosphor' : 'text-white/70'
-                }`}
-              >
-                <item.icon className="w-5 h-5" />
-                <span className="font-medium">{item.label}</span>
-              </button>
-            ))}
-          </div>
+          {navItems.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => {
+                setPage(item.id as Page);
+                setIsOpen(false);
+              }}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.75rem',
+                width: '100%',
+                padding: '0.75rem 1rem',
+                marginBottom: '0.25rem',
+                fontFamily: 'monospace',
+                fontSize: '1.1rem',
+                textTransform: 'uppercase',
+                letterSpacing: '0.08em',
+                color: currentPage === item.id ? '#FFB347' : 'rgba(255,255,255,0.65)',
+                background: currentPage === item.id ? 'rgba(255,179,71,0.08)' : 'none',
+                border: 'none',
+                borderRadius: '4px',
+                cursor: 'pointer',
+                textAlign: 'left',
+              }}
+            >
+              <item.icon size={16} />
+              <span>{item.label}</span>
+            </button>
+          ))}
         </motion.div>
       )}
-    </nav>
+    </div>
   );
 }
