@@ -4,7 +4,7 @@ export const projects = [
     category: "Web Development/IT Management",
     status: "ONGOING",
     description: "Comprehensive IT management and web development for a local temple. Responsibilities include website maintenance, network administration, and user support. Currently on retainer for ongoing support and development.",
-    image: "assets\\koyasan.jpg",
+    image: "assets\\koyasan.webp",
     tags: ["SquareSpace", "Aplos", "Power Apps", "IT Management", "Workflow Optimization"]
   },
   {
@@ -12,7 +12,7 @@ export const projects = [
     category: "Website Maintenance",
     status: "COMPLETED",
     description: "Website maintenance and updates for a local photography studio.",
-    image: "assets\\film-processing.jpg",
+    image: "assets\\film-processing.webp",
     tags: ["IONOS", "Website Redesign", "Security", "DevOps"]
   }, 
   {
