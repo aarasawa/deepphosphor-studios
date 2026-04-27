@@ -18,7 +18,7 @@ export default function Home({ setPage }: HomeProps) {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
-          className="flex flex-col items-center text-center"
+          className="flex flex-col items-center text-center relative z-10"
         >
           <Logo variant="stacked" size={280} className="mb-6 drop-shadow-[0_0_20px_rgba(255,179,71,0.2)]" />
 
